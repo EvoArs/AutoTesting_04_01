@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class TestFormDeliveryDebitCard {
     private WebDriver driver;
 
-    // настройка под драйвер
+    // настройка под драйвер хрома
     @BeforeAll
     public static void setupAll() {
         WebDriverManager.chromedriver().setup();
@@ -71,7 +71,7 @@ public class TestFormDeliveryDebitCard {
         $("[data-test-id='agreement']").click();
         //7. Нажатие кнопки "Забронировать"
         $("button.button").click();
-        //8. Фиксация всплывающего сообщения
+        //8. Фиксация всплывающих сообщений
         $("div.notification__title").shouldHave(text("Успешно!"),
                 Duration.ofSeconds(15)).shouldBe(visible);
         $(".notification__content").shouldHave(text("Встреча успешно забронирована на " + currentDate),
