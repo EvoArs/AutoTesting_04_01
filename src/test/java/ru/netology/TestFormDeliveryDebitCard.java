@@ -31,9 +31,8 @@ public class TestFormDeliveryDebitCard {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        options.addArguments("--headless"); //        Опция отключающаяя отображение работы браузера при запуске тестов
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
-
     }
 
     @AfterEach
@@ -52,7 +51,6 @@ public class TestFormDeliveryDebitCard {
     private String genDate(int addDay, String pattern) {
         return LocalDate.now().plusDays(addDay).format(DateTimeFormatter.ofPattern(pattern));
     }
-
 
     @Test
     void testDebitCardPage() {
